@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let eachproduct of cartData" class="col-md-6 col-lg-4 col-sm-12" style="padding-top: 30px;">
+            <div class="card" style="border-radius: 30px;">
+                <img class="card-img-top" [src]="eachproduct.image2" alt="Card image cap">
+                <div class="card-body">
+                    <div>
+                        <div class="float-left">
+                            <h5 class="card-title"><strong>{{eachproduct.title}}</strong></h5>
+                        </div>
+                        <div class="float-right">
+                            <button (click)="addItemToCart(eachproduct);" class="btn btn-sm btn-danger">Add</button>
+                        </div>
+                    </div>
+                    <div style="clear: both;">
+                        <p class="card-text product-description">{{eachproduct.description}}</p>
+                        <p class="card-text"><strong>Price: &#x20B9;{{eachproduct.priceValue}}</strong></p>
+                        <p class="card-text alert alert-primary" *ngIf="eachproduct.quantity > 0">Quantity:
+                            {{eachproduct.quantity}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

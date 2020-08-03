@@ -1,0 +1,8 @@
+.login {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background: lightgoldenrodyellow;
+}

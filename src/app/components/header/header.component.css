@@ -1,0 +1,6 @@
+.pink-background {
+    background-color: #ed5a55;
+}
+.pink-background .navbar-brand, .pink-background .nav-link {
+    color: white;
+}

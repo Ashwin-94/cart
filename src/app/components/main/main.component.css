@@ -1,0 +1,20 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+.product-description {
+    min-height: 250px;
+  max-height: 250px;
+  overflow: auto;
+  padding: 7px;
+}

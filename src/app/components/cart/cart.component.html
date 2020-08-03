@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row cart-item" *ngFor="let item of cartItem">
+        <div class="col-md-4 col-lg-4 col-sm-4">
+            <img [src]="item.image2" alt="Card image cap">
+        </div>
+        <div class="col-md-8 col-lg-8 col-sm-8">
+            <p style="color: darkpink;">{{item.title}}</p>
+            <p><strong>Price: &#x20B9;{{item.priceValue}}</strong></p>
+            <div>
+                <span>
+                    <button (click)="addItem(item)" class="btn btn-danger">+</button>
+                </span>
+                <span style="margin-left: 15px;">
+                    <button (click)="removeItem(item)" [disabled]="item.quantity === 1"
+                        class="btn btn-danger">-</button>
+                </span>
+            </div>
+            <p>Quantity: {{item.quantity}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="card" style="width: 100%;margin-top: 20px;">
+            <div class="card-header">
+                <input type="checkbox" (change)="shipingChange($event);" name="shipping">
+                Shipping +50 Rupees
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Total: {{total}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="text-center m-3">
+    <button class="btn btn-info">CHECKOUT</button>
+</div>
