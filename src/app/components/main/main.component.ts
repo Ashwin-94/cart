@@ -18,7 +18,8 @@ export class MainComponent implements OnInit {
     this.loadCartData();
   }
   loadCartData() {
-    this.cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    this.cartItem = cartItem === null ? [] : cartItem;
     this.cartService.getCartData().subscribe((response) => {
       this.cartData = JSON.parse(JSON.stringify(response));
       this.cartData.map(data => {
