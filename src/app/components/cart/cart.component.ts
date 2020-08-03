@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    this.cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
     this.calculateTotal(this.cartItem);
   }
   calculateTotal(cartItem: any) {
@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
       }
     });
     this.calculateTotal(this.cartItem);
-    localStorage.setItem('cartItem', JSON.stringify(this.cartItem));
+    sessionStorage.setItem('cartItem', JSON.stringify(this.cartItem));
   }
   removeItem(item) {
     this.cartItem.map(data => {
@@ -40,7 +40,7 @@ export class CartComponent implements OnInit {
       }
     });
     this.calculateTotal(this.cartItem);
-    localStorage.setItem('cartItem', JSON.stringify(this.cartItem));
+    sessionStorage.setItem('cartItem', JSON.stringify(this.cartItem));
   }
   shipingChange(event) {
     if (event.target.checked) {

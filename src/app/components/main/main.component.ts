@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
     this.loadCartData();
   }
   loadCartData() {
-    const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+    const cartItem = JSON.parse(sessionStorage.getItem('cartItem'));
     this.cartItem = cartItem === null ? [] : cartItem;
     this.cartService.getCartData().subscribe((response) => {
       this.cartData = JSON.parse(JSON.stringify(response));
@@ -46,6 +46,6 @@ export class MainComponent implements OnInit {
       this.cartItem.push(itemSelected);
     }
     this.cartService.changeQuantity(this.cartItem.length);
-    localStorage.setItem('cartItem', JSON.stringify(this.cartItem));
+    sessionStorage.setItem('cartItem', JSON.stringify(this.cartItem));
   }
 }

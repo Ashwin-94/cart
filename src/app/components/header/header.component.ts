@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.quantity.subscribe(quantity => this.quantity = quantity);
-    const quantity = (JSON.parse(localStorage.getItem('cartItem')));
+    const quantity = (JSON.parse(sessionStorage.getItem('cartItem')));
     this.quantity = quantity === null ? 0 : quantity.length;
   }
 
